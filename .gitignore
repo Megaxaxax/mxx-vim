@@ -1,3 +1,2 @@
-*.[oa]
-*~
-*.swp
+*~		# for temp files of text editors like Emacs
+*.swp	# for VIM temp files
