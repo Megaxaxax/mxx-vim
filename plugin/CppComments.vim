@@ -1,9 +1,13 @@
 function! CppCommentDebugFunction()
-	silent! %s/acutPrintf(.*DEBUG>.*);/\/\/\0/
+	silent! %s/[\/]*\(acutPrintf(.*DEBUG>.*);\)/\/\/\1/
 endfunction
 
 function! CppUncommentDebugFunction()
-	silent! %s/\/\/\(acutPrintf(.*DEBUG>.*);\)/\1/
+	silent! %s/[\/]*\(acutPrintf(.*DEBUG>.*);\)/\1/
+endfunction
+
+function! CppDeleteDebugFunction()
+	silent! g/acutPrintf(.*DEBUG>.*);/d
 endfunction
 
 function! CppDebugFunction(text)
@@ -12,7 +16,12 @@ function! CppDebugFunction(text)
 :execute 'normal a"));'
 endfunction
 
+function! CommentToBriefFunction()
+	silent! s/\/\/\(.*\)$/\/\*\*\r\t\/brief\t\1\r\t\*\//
+endfunction
+
 command! CppCommentDebug call CppCommentDebugFunction()
 command! CppUncommentDebug call CppUncommentDebugFunction()
+command! CppDeleteDebug call CppDeleteDebugFunction()
 command! -nargs=1 CppDebug call CppDebugFunction(<q-args>)
-
+command! CommentToBrief call CommentToBriefFunction()
