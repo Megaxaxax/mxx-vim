@@ -16,6 +16,12 @@ function! CppDebugFunction(text)
 :execute 'normal a"));'
 endfunction
 
+function! FindUncommentedDebugFunction()
+	let searchStr = '[^/]acutPrintf.*DEBUG'
+	:execute "normal /" . searchStr . "/\<CR>"
+	let @/ = searchStr
+endfunction
+
 function! FindClassFunctionFunction(class)
 	let searchStr = a:class . '::.*(.*)\_.*{\_.*}'
 	:execute "normal /" . searchStr . "/\<CR>"
@@ -32,3 +38,4 @@ command! CppDeleteDebug call CppDeleteDebugFunction()
 command! -nargs=1 CppDebug call CppDebugFunction(<q-args>)
 command! CommentToBrief call CommentToBriefFunction()
 command! -nargs=1 FindClassFunction call FindClassFunctionFunction(<q-args>) | normal n
+command! FindUncommentedDebug call FindUncommentedDebugFunction() | normal n
