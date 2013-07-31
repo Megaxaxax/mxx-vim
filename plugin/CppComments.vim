@@ -16,6 +16,11 @@ function! CppDebugFunction(text)
 :execute 'normal a"));'
 endfunction
 
+function! FindClassFunctionFunction(class)
+	let searchStr = a:class . '::.*(.*)\_.*{\_.*}/'
+	:execute "normal /" . searchStr
+endfunction
+
 function! CommentToBriefFunction()
 	silent! s/\/\/\(.*\)$/\/\*\*\r\t\/brief\t\1\r\t\*\//
 endfunction
@@ -25,3 +30,4 @@ command! CppUncommentDebug call CppUncommentDebugFunction()
 command! CppDeleteDebug call CppDeleteDebugFunction()
 command! -nargs=1 CppDebug call CppDebugFunction(<q-args>)
 command! CommentToBrief call CommentToBriefFunction()
+command! -nargs=1 FindClassFunction call FindClassFunctionFunction(<q-args>)
