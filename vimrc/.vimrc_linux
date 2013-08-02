@@ -13,7 +13,11 @@ set linebreak " word wrap
 set showmode " show --INSERT--, --NORMAL---, etc. on last line of vim
 let &runtimepath .= ',/home/creative/.vim/after'
 set autochdir " auto change directory to current file
+
 set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+
 set backspace=indent,eol,start " make backspace work like most other apps
 set is " interactive search
 set autoindent " enable auto indent
