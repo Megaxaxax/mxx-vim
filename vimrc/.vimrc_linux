@@ -13,6 +13,7 @@ set linebreak " word wrap
 set showmode " show --INSERT--, --NORMAL---, etc. on last line of vim
 let &runtimepath .= ',/home/creative/.vim/after'
 set autochdir " auto change directory to current file
+set wildmenu " при вводе команды через ':' и нажатии <tab> появляется окно из которого можно просмотреть список вариантов команды
 
 set tabstop=4
 set shiftwidth=4

@@ -13,6 +13,7 @@ set shiftwidth=4
 set softtabstop=4
 
 set scrolloff=5 " при достижении границ экрана текст всегда пролистывается заранее за 5 строк
+set wildmenu " при вводе команды через ':' и нажатии <tab> появляется окно из которого можно просмотреть список вариантов команды
 
 set backspace=indent,eol,start " make backspace work like most other apps
 set is " interactive search
