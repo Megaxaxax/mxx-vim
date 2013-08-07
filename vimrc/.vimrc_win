@@ -12,6 +12,8 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+set scrolloff=5 " при достижении границ экрана текст всегда пролистывается заранее за 5 строк
+
 set backspace=indent,eol,start " make backspace work like most other apps
 set is " interactive search
 set autoindent " enable auto indent
