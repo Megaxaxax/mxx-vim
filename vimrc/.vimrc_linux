@@ -6,7 +6,7 @@ set iminsert=0
 set imsearch=0
 " Решение проблемы с буквой ё
 " Включение/выключение spell через :set spell, :set nospell
-set spellang=ru_yo,en_us
+set spelllang=ru_yo,en_us
 
 set showbreak=.. "line break is .. now
 set linebreak " word wrap
@@ -15,6 +15,7 @@ let &runtimepath .= ',/home/creative/.vim/after'
 set autochdir " auto change directory to current file
 set wildmenu " при вводе команды через ':' и нажатии <tab> появляется окно из которого можно просмотреть список вариантов команды
 
+set smarttab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
