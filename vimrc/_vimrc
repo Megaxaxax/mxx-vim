@@ -1,14 +1,17 @@
 set nocompatible
 source $VIMRUNTIME/mswin.vim
 behave mswin
-" РџРѕСЃР»Рµ РґРѕР±Р°РІР»РµРЅРёСЏ РґР°РЅРЅС‹С… СЃС‚СЂРѕРє,
-" РїРµСЂРµРєР»СЋС‡РµРЅРёРµ СЂР°СЃРєР»Р°РґРєРё РѕСЃСѓС‰РµСЃС‚РІР»СЏРµС‚СЃСЏ С‡РµСЂРµР· CTRL-^, РІ СЂРµР¶РёРјРµ РІСЃС‚Р°РІРєРё
-" Р­С‚Рё СЃС‚СЂРѕРєРё РЅРµРѕР±С…РѕРґРёРјС‹, РїРѕСЃРєРѕР»СЊРєСѓ vim РЅРµ СЂР°Р±РѕС‚Р°РµС‚ СЃ utf-8
+" После добавления данных строк,
+" переключение раскладки осуществляется через CTRL-^, в режиме вставки
+" Эти строки необходимы, поскольку vim не работает с utf-8
+
+language ctype Russian_Russia.1251
+
 set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
-" Р РµС€РµРЅРёРµ РїСЂРѕР±Р»РµРјС‹ СЃ Р±СѓРєРІРѕР№ С‘
-" Р’РєР»СЋС‡РµРЅРёРµ/РІС‹РєР»СЋС‡РµРЅРёРµ spell С‡РµСЂРµР· :set spell, :set nospell
+" Решение проблемы с буквой ё
+" Включение/выключение spell через :set spell, :set nospell
 set spelllang=ru_yo,en_us
 
 set showbreak=.. "line break is .. now
@@ -16,14 +19,14 @@ set linebreak " word wrap
 set showmode " show --INSERT--, --NORMAL---, etc. on last line of vim
 let &runtimepath .= ',/home/creative/.vim/after'
 set autochdir " auto change directory to current file
-set wildmenu " РїСЂРё РІРІРѕРґРµ РєРѕРјР°РЅРґС‹ С‡РµСЂРµР· ':' Рё РЅР°Р¶Р°С‚РёРё <tab> РїРѕСЏРІР»СЏРµС‚СЃСЏ РѕРєРЅРѕ РёР· РєРѕС‚РѕСЂРѕРіРѕ РјРѕР¶РЅРѕ РїСЂРѕСЃРјРѕС‚СЂРµС‚СЊ СЃРїРёСЃРѕРє РІР°СЂРёР°РЅС‚РѕРІ РєРѕРјР°РЅРґС‹
+set wildmenu " при вводе команды через ':' и нажатии <tab> появляется окно из которого можно просмотреть список вариантов команды
 
 set smarttab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
-set scrolloff=5 " РїСЂРё РґРѕСЃС‚РёР¶РµРЅРёРё РіСЂР°РЅРёС† СЌРєСЂР°РЅР° С‚РµРєСЃС‚ РІСЃРµРіРґР° РїСЂРѕР»РёСЃС‚С‹РІР°РµС‚СЃСЏ Р·Р°СЂР°РЅРµРµ Р·Р° 5 СЃС‚СЂРѕРє
+set scrolloff=5 " при достижении границ экрана текст всегда пролистывается заранее за 5 строк
 
 set backspace=indent,eol,start " make backspace work like most other apps
 set is " interactive search
@@ -35,5 +38,4 @@ syntax on
 set laststatus=2 " show status line
 set statusline=%f%m%r%h%w\ %y\ enc:%{&enc}\ ff:%{&ff}\ fenc:%{&fenc}%=(ch:%3b\ hex:%2B)\ col:%2c\ line:%2l/%L\ [%2p%%]
 filetype plugin on " needed for AutoFenc
-colorscheme desert
 set guifont=Courier\ New:h10:cRUSSIAN
