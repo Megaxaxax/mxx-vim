@@ -28,7 +28,7 @@ set backspace=indent,eol,start " make backspace work like most other apps
 set is " interactive search
 set autoindent " enable auto indent
 set smartindent " make indent in new block
-set nowrap
+set wrap
 set number
 syntax on
 set laststatus=2 " show status line
