@@ -34,5 +34,5 @@ syntax on
 set laststatus=2 " show status line
 set statusline=%f%m%r%h%w\ %y\ enc:%{&enc}\ ff:%{&ff}\ fenc:%{&fenc}%=(ch:%3b\ hex:%2B)\ col:%2c\ line:%2l/%L\ [%2p%%]
 filetype plugin on " needed for AutoFenc
-colorscheme desert
+colorscheme darkblue
 set guifont=Ubuntu\ Mono\ 12
