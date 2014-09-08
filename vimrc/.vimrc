@@ -1,3 +1,6 @@
+set noswapfile
+set nobackup
+
 set number
 set relativenumber
 " После добавления данных строк,
