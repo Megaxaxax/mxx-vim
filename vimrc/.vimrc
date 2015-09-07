@@ -1,5 +1,10 @@
+" Подсветка ограничения длины строки в 80 символов.
+highlight OverLength ctermbg=red ctermfg=white guibg=#FFDDDD
+match OverLength /\%81v.\+/
+
 set noswapfile
 set nobackup
+set hlsearch
 
 set number
 set relativenumber
@@ -31,11 +36,10 @@ set backspace=indent,eol,start " make backspace work like most other apps
 set is " interactive search
 set autoindent " enable auto indent
 set smartindent " make indent in new block
-set wrap
+set nowrap
 set number
 syntax on
 set laststatus=2 " show status line
 set statusline=%f%m%r%h%w\ %y\ enc:%{&enc}\ ff:%{&ff}\ fenc:%{&fenc}%=(ch:%3b\ hex:%2B)\ col:%2c\ line:%2l/%L\ [%2p%%]
 filetype plugin on " needed for AutoFenc
-colorscheme darkblue
-set guifont=Ubuntu\ Mono\ 12
+set guifont=Droid\ Sans\ Mono\ 10
