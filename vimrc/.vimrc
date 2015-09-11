@@ -1,6 +1,11 @@
 " Подсветка ограничения длины строки в 80 символов.
-highlight OverLength ctermbg=red ctermfg=white guibg=#FFDDDD
-match OverLength /\%81v.\+/
+set colorcolumn=81
+highlight ColorColumn ctermbg=darkgray
+
+augroup project
+	autocmd!
+	autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
+augroup END
 
 set noswapfile
 set nobackup
